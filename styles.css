@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #009087, #00b3a1);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.header h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.header p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.countdown {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.time {
+    margin: 0 15px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.time span {
+    display: block;
+    font-size: 12px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #e8e8e8;
+    color: #009087;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: #009087;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.social-icons {
+    margin-top: 20px; /* Menambahkan jarak antara tombol dan ikon sosial */
+}
+
+.social-icons a {
+    color: white;
+    font-size: 30px;
+    margin: 0 15px; /* Jarak antar ikon */
+    transition: transform 0.2s; /* Efek transformasi saat hover */
+}
+
+.social-icons a:hover {
+    transform: scale(1.2); /* Memperbesar ikon saat hover */
+}

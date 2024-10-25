@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Konsultanin Legalkita</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Coming Soon</h1>
+            <p>Website kami akan segera hadir.</p>
+            <h2>konsultanin.legalkita.id</h2>
+            <p>Developer By Davin</p>
+        </div>
+        <div id="countdown" class="countdown"></div>
+        <p>Ikuti kami untuk pembaruan lebih lanjut.</p>
+        <a href="#" id="subscribe-button" class="button">Daftar untuk Pembaruan</a>
+        
+        <!-- Ikon Media Sosial -->
+        <div class="social-icons">
+            <a href="https://github.com/davSec01" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com/davinrizqyk_a" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <script>
+        // Hitung mundur ke tanggal rilis
+        const releaseDate = new Date(Date.now() + 2 * 24 * 60 * 60 * 1000); // 2 hari dari sekarang
+
+        const countdown = document.getElementById("countdown");
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeDiff = releaseDate - now;
+
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            countdown.innerHTML = `
+                <h3>Hitung Mundur:</h3>
+                <div class="countdown-timer">
+                    <div class="time">${days}<span>Hari</span></div>
+                    <div class="time">${hours}<span>Jam</span></div>
+                    <div class="time">${minutes}<span>Menit</span></div>
+                    <div class="time">${seconds}<span>Detik</span></div>
+                </div>
+            `;
+
+            // Jika waktu habis, tampilkan pesan
+            if (timeDiff < 0) {
+                clearInterval(interval);
+                countdown.innerHTML = "<h3>Website sudah diluncurkan!</h3>";
+            }
+        }
+
+        const interval = setInterval(updateCountdown, 1000);
+
+        // Efek tombol kabur-kaburan
+        const subscribeButton = document.getElementById("subscribe-button");
+        subscribeButton.addEventListener("click", function(event) {
+            event.preventDefault(); // Mencegah aksi default dari tautan
+
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+
+            subscribeButton.style.position = "absolute";
+            subscribeButton.style.left = `${x}px`;
+            subscribeButton.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
